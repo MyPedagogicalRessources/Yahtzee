@@ -82,6 +82,12 @@ class YahtzeeTourTest {
         assertEquals(3, yahtzeeTour.getNombreOccurencesPourValeurDes(1));
         // expected: 0 pour une valeur qui n'est pas dans le lancer
         assertEquals(0, yahtzeeTour.getNombreOccurencesPourValeurDes(2));
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 5c7b1fd (initial commit)
     }
 
 }

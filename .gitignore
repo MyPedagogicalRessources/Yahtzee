@@ -1,0 +1,9 @@
+# Maven files
+target
+
+# idea files
+.idea
+
+# sujet dissocie
+ACTIVITE_Cas_*.md
+Repartitions_Cas_Figure.*

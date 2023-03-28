@@ -10,6 +10,7 @@ public class YahtzeeTour {
 
     /**
      * Créé une instance de Yahtzee tour
+     *
      * @param valeursDes la valeurs des dès non ordonnées
      */
     public YahtzeeTour(Integer... valeursDes) {
@@ -29,7 +30,6 @@ public class YahtzeeTour {
     }
 
     /**
-     *
      * @return le nombre de valeurs différentes issu du lancement des dés
      */
     public int getNombreValeursDifferentesDes() {
@@ -39,6 +39,7 @@ public class YahtzeeTour {
     /**
      * Retourne la liste liste ordonnée des valeurs obtenues (sans duplication).
      * Par exemple, pour le lancer (2,3,2,4,4), la liste obtenue est (2,3,4)
+     *
      * @return La liste ordonnée
      */
     public List<Integer> getValeursOrdonnees() {
@@ -46,7 +47,6 @@ public class YahtzeeTour {
     }
 
     /**
-     *
      * @param valeurDes la valeur du dés pour laquelle on veut le nombre d'occurence
      * @return le nombre d'occurence de la valeur du dés
      */
@@ -56,11 +56,33 @@ public class YahtzeeTour {
     }
 
     /**
-     *
      * @return le score correspondant à la combinaison de dés
      */
     public int calculeScore() {
-        return 0;
+        int score = 0;
+        if (getNombreValeursDifferentesDes() == 3) {
+            for (int val : getValeursOrdonnees()) {
+                if (getNombreOccurencesPourValeurDes(val) == 3) {
+                    score = 3 * val;
+                }
+            }
+        } else if (getNombreValeursDifferentesDes() == 5) {
+            if (getValeursOrdonnees().containsAll(Arrays.asList(1, 2, 3, 4, 5))
+                    || getValeursOrdonnees().containsAll(Arrays.asList(2, 3, 4, 5, 6))) {
+                score = 40;
+            } else if (getValeursOrdonnees().containsAll(Arrays.asList(1, 2, 3, 4))
+                    || getValeursOrdonnees().containsAll(Arrays.asList(2, 3, 4, 5))
+                    || getValeursOrdonnees().containsAll(Arrays.asList(3, 4, 5, 6))) {
+                score = 30;
+            }
+        }else if (getNombreValeursDifferentesDes() == 4 || getNombreValeursDifferentesDes() == 5) {
+            if (getValeursOrdonnees().containsAll(Arrays.asList(1, 2, 3, 4))
+                    || getValeursOrdonnees().containsAll(Arrays.asList(2, 3, 4, 5))
+                    || getValeursOrdonnees().containsAll(Arrays.asList(3, 4, 5, 6))) {
+                score = 30;
+            }
+        }
+        return score;
     }
 
 }

@@ -99,13 +99,13 @@ class YahtzeeTourTest {
 
     @Test
     void calculeScore_PetiteSuite() {
-        // given une petite suite
+        // given une petite suite 4 valeurs différentes
         YahtzeeTour yahtzeeTour = new YahtzeeTour(4, 2, 5, 4, 3);
         // expected: le score est 30
         assertEquals(30, yahtzeeTour.calculeScore());
 
-        // given une petite suite
-        yahtzeeTour = new YahtzeeTour(6, 5, 4, 3, 5);
+        // given une petite suite 5 valeurs différentes
+        yahtzeeTour = new YahtzeeTour(6, 5, 4, 3, 1);
         // expected: le score est 30
         assertEquals(30, yahtzeeTour.calculeScore());
     }

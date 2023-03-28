@@ -82,12 +82,45 @@ class YahtzeeTourTest {
         assertEquals(3, yahtzeeTour.getNombreOccurencesPourValeurDes(1));
         // expected: 0 pour une valeur qui n'est pas dans le lancer
         assertEquals(0, yahtzeeTour.getNombreOccurencesPourValeurDes(2));
-<<<<<<< HEAD
-=======
+    }
 
+    @Test
+    void calculeScore_Brelan() {
+        // given un brelan de 2
+        YahtzeeTour yahtzeeTour = new YahtzeeTour(1, 2, 5, 2, 2);
+        // expected: le score est 6
+        assertEquals(6, yahtzeeTour.calculeScore());
 
+        // given un brelan de 6
+        yahtzeeTour = new YahtzeeTour(6, 2, 6, 6, 1);
+        // expected: le score est 18
+        assertEquals(18, yahtzeeTour.calculeScore());
+    }
 
->>>>>>> 5c7b1fd (initial commit)
+    @Test
+    void calculeScore_PetiteSuite() {
+        // given une petite suite
+        YahtzeeTour yahtzeeTour = new YahtzeeTour(4, 2, 5, 4, 3);
+        // expected: le score est 30
+        assertEquals(30, yahtzeeTour.calculeScore());
+
+        // given une petite suite
+        yahtzeeTour = new YahtzeeTour(6, 5, 4, 3, 5);
+        // expected: le score est 30
+        assertEquals(30, yahtzeeTour.calculeScore());
+    }
+
+    @Test
+    void calculeScore_GrandeSuite() {
+        // given une petite suite
+        YahtzeeTour yahtzeeTour = new YahtzeeTour(4, 2, 5, 6, 3);
+        // expected: le score est 40
+        assertEquals(40, yahtzeeTour.calculeScore());
+
+        // given une petite suite
+        yahtzeeTour = new YahtzeeTour(2, 5, 4, 3, 1);
+        // expected: le score est 18
+        assertEquals(40, yahtzeeTour.calculeScore());
     }
 
 }

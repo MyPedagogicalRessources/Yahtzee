@@ -98,6 +98,14 @@ class YahtzeeTourTest {
     }
 
     @Test
+    void calculeScore_FauxBrelan() {
+        // given un full (faux brelan)
+        YahtzeeTour yahtzeeTour = new YahtzeeTour(5, 2, 5, 2, 2);
+        // expected: le score ne doit pas etre 6
+        assertNotEquals(6, yahtzeeTour.calculeScore());
+    }
+
+    @Test
     void calculeScore_PetiteSuite() {
         // given une petite suite 4 valeurs différentes
         YahtzeeTour yahtzeeTour = new YahtzeeTour(4, 2, 5, 4, 3);
@@ -111,6 +119,14 @@ class YahtzeeTourTest {
     }
 
     @Test
+    void calculeScore_FaussePetiteSuite() {
+        // given 4 valeurs différentes qui ne soit pas une petite suite
+        YahtzeeTour yahtzeeTour = new YahtzeeTour(4, 1, 5, 4, 3);
+        // expected: le score ne doit pas etre  30
+        assertNotEquals(30, yahtzeeTour.calculeScore());
+    }
+
+    @Test
     void calculeScore_GrandeSuite() {
         // given une petite suite
         YahtzeeTour yahtzeeTour = new YahtzeeTour(4, 2, 5, 6, 3);
@@ -121,6 +137,14 @@ class YahtzeeTourTest {
         yahtzeeTour = new YahtzeeTour(2, 5, 4, 3, 1);
         // expected: le score est 18
         assertEquals(40, yahtzeeTour.calculeScore());
+    }
+
+    @Test
+    void calculeScore_FausseGrandeSuite() {
+        // given un tout avec 5 valeurs différentes
+        YahtzeeTour yahtzeeTour = new YahtzeeTour(4, 2, 5, 6, 1);
+        // expected: le score ne doit pas etre 40
+        assertNotEquals(40, yahtzeeTour.calculeScore());
     }
 
 }

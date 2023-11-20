@@ -2,10 +2,7 @@
 
 ## 0. Modification du fichier README
 
-Clonez votre projet Github dans un dossier de travail sur votre machine.
-Modifiez le fichier README avec vos nom, prénom.
-
-> fix #0 Fichier README OK
+Vous travaillez en binôme, un des membres du binôme doit modifier le fichier README avec vos noms, prénoms et groupe.
 
 ## Développement en TDD du calcul du score d'un tour de partie de Yahtzee
 
@@ -31,15 +28,20 @@ Avant de répondre aux activités suivantes, étudiez la structure et le code pr
 Les méthodes implantées et testées de la classe YahtzeeTour ont été conçue pour vous faciliter la tâche. 
 Il est donc pertinent de chercher à les utiliser dans les exercices suivants.
 
-1. Implantez les tests de la méthode du calcul du score d'un tour de partie de Yahtzee pour les cas de figure fournis par votre enseignant (7,5 pts)
+**Pour chaque cas de figure**
 
-> fix #1 Implantation du code de test
+1. Implantez le ou les tests de la méthode du calcul du score d'un tour de partie de Yahtzee.
 
-2. Implantez la méthode du calcul du score d'un tour de partie de Yahtzee pour les cas de figure testés (9 pts)
+2. Implantez la méthode du calcul du score d'un tour de partie de Yahtzee pour les cas de figure testés.
 
-> fix #2 Implantation du code principal 
+3. Effectuez un remaniement du code principal pour en améliorer la qualité et la lisibilité.
 
-3. Effectuez un remaniement du code principal pour en améliorer la qualité et la lisibilité (3,5 pts)
+## Exigences qualité
 
-> fix #3 refactoring du code principal 
-
+- Le code produit doit contenir 0 warning/erreur checkstyle, 0 warning/erreur Spotbug.
+- Le code produit doit faire l'objet d'une couverture par les tests supérieure à 90%.
+- Chaque cas de figure est résolu par un membre du binôme dans une branche de feature.
+- Chaque cas de figure résolu doit faire l'objet d'une _pull request_ requiérant la revue de code par le membre du binôme
+n'ayant pas travaillé sur le cas de figure concerné.
+- Les contributions de chaque branche de feature sont intégrées à la branche principale suivant la stratégie "rebase" puis "merge --no-ff"
+étudiée dans les précédents TP.
